@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ProjectUCP2</string>
-    
+    <string name="back_button">Kembali</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="next">Lanjut</string>
+    <string name="cancel">Batal</string>
+    <string name="kons">Konsentrasi</string>
+    <string name="name">Nama</string>
+    <string name="nim">NIM</string>
+    <string name="judul">Judul Skripsi</string>
 </resources>
