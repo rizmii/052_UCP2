@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.example.projectucp2.data.DataSource.dospem
 import com.example.projectucp2.data.FormUIState
 import com.example.projectucp2.ui.theme.FormViewModel
-import kotlinx.coroutines.flow.internal.NoOpContinuation.context
+//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,10 +47,10 @@ fun halamanForm(
     }
     var listDataTxt:MutableList<String> = mutableListOf(namaTxt,nimTxt,konsentrasiTxt,judulTxt)
 
-    val context = LocalContext.current
-    val dataForm: FormUIState
-    val uiState by FormViewModel.uiState.collectAsState()
-    dataForm=uiState;
+//    val context = LocalContext.current
+//    val dataForm: FormUIState
+//    val uiState by FormViewModel.uiState.collectAsState()
+//    dataForm=uiState;
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -81,8 +81,8 @@ fun halamanForm(
         } )
         Spacer(modifier= Modifier.padding(16.dp))
 
-        SelectDosen(options = dospem.map { id-> context.resources.getString(id)},
-            onSelectionChanged = {FormViewModel.setDospem(it)})
+//        SelectDosen(options = dospem.map { id-> context.resources.getString(id)},
+//            onSelectionChanged = {FormViewModel.setDospem(it)})
 
         Spacer(modifier= Modifier.padding(16.dp))
         Button(onClick = {onSubmitButtonClick(listDataTxt)}) {
@@ -90,35 +90,35 @@ fun halamanForm(
 
     }
 }
-@Composable
-fun SelectDosen(
-    options: List<String>,
-    onSelectionChanged: (String) -> Unit ={}
-){
-    var selectedValue by rememberSaveable{ mutableStateOf("") }
-
-    Column(modifier = Modifier.padding(10.dp)) {
-        options.forEach{ item ->
-            Row(
-                modifier = Modifier.selectable(
-                    selected = selectedValue== item,
-                    onClick = {
-                        selectedValue = item
-                        onSelectionChanged(item)
-                    }
-                ),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                RadioButton(
-                    selected = selectedValue == item,
-                    onClick={
-                        selectedValue = item
-                        onSelectionChanged(item)
-                    }
-                )
-                Text(item)
-            }
-
-        }
-    }
-}
+//@Composable
+//fun SelectDosen(
+//    options: List<String>,
+//    onSelectionChanged: (String) -> Unit ={}
+//){
+//    var selectedValue by rememberSaveable{ mutableStateOf("") }
+//
+//    Column(modifier = Modifier.padding(10.dp)) {
+//        options.forEach{ item ->
+//            Row(
+//                modifier = Modifier.selectable(
+//                    selected = selectedValue== item,
+//                    onClick = {
+//                        selectedValue = item
+//                        onSelectionChanged(item)
+//                    }
+//                ),
+//                verticalAlignment = Alignment.CenterVertically
+//            ) {
+//                RadioButton(
+//                    selected = selectedValue == item,
+//                    onClick={
+//                        selectedValue = item
+//                        onSelectionChanged(item)
+//                    }
+//                )
+//                Text(item)
+//            }
+//
+//        }
+//    }
+//}

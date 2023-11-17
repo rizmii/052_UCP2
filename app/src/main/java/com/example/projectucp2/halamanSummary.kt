@@ -53,6 +53,8 @@ fun halamanSummary (
             Text(text = formUiState.judulSkripsi)
             Divider()
             Spacer(modifier = Modifier.padding(16.dp))
+//            SelectDosen(options = dospem.map { id-> context.resources.getString(id)},
+//            onSelectionChanged = {FormViewModel.setDospem(it)})
             Button(onClick = onCancelButtonClicked) {
                 Text(text = stringResource(id = R.string.back_button))
             }
